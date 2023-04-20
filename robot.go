@@ -5,11 +5,11 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/opensourceways/community-robot-lib/config"
-	"github.com/opensourceways/community-robot-lib/robot-gitee-framework"
 	sdk "github.com/opensourceways/go-gitee/gitee"
 	"github.com/opensourceways/repo-owners-cache/grpc/client"
 	"github.com/opensourceways/repo-owners-cache/repoowners"
+	"github.com/opensourceways/robot-gitee-lib/framework"
+	"github.com/opensourceways/server-common-lib/config"
 	"github.com/sirupsen/logrus"
 )
 
@@ -67,7 +67,7 @@ func (bot *robot) canApply(cfg config.Config, org, repo string) error {
 	return fmt.Errorf("no config for this repo:%s/%s", org, repo)
 }
 
-func (bot *robot) RegisterEventHandler(f framework.HandlerRegitster) {
+func (bot *robot) RegisterEventHandler(f framework.HandlerRegister) {
 	f.RegisterPullRequestHandler(bot.handlePREvent)
 	f.RegisterNoteEventHandler(bot.handleNoteEvent)
 }

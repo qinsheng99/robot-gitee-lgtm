@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/opensourceways/community-robot-lib/giteeclient"
 	sdk "github.com/opensourceways/go-gitee/gitee"
 	"github.com/opensourceways/repo-owners-cache/repoowners"
+	giteeclient "github.com/opensourceways/robot-gitee-lib/client"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/util/sets"
 )
